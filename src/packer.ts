@@ -47,13 +47,12 @@ export class Packer {
             console.warn(`${arc.url} => ${err}`);
             return;
           } else {
-            success = true;
+            success = arc.url.length > 0 && arc.content.length > 0;
           }
         });
         task.push({ id: start, url: arc.url, path: filepath, success: success });
       });
     }
-    console.log(task);
 
     return task;
   }
