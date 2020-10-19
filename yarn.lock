@@ -702,10 +702,10 @@
     "@typescript-eslint/types" "4.5.0"
     eslint-visitor-keys "^2.0.0"
 
-"@wabarc/archiver@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@wabarc/archiver/-/archiver-0.0.3.tgz#c85b7691c136e119138408f1ce096d1cdf9a9bf9"
-  integrity sha512-Scn331eNmgC+BUQehIoUrJXF6yBgPgaGGEZY5HF8HNiwnAItTXIbyeQsYILsaLgdZuS8Pn5vxLXxpwjobyfEBQ==
+"@wabarc/archiver@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@wabarc/archiver/-/archiver-0.0.4.tgz#3c137f80815807f58117e28ef8a035cf95066091"
+  integrity sha512-HfLrUzKJrkF7Hy9oud1aEyuK3FlPLAKP+R1bkppMOiU/ANPIIfA8STJ13ZwzdXitIULvBoiUlmSmRqWzKH5TsQ==
   dependencies:
     "@wabarc/cairn" "^1.2.1"
     axios "^0.20.0"
