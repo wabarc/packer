@@ -29,13 +29,12 @@ export class Packer {
     }
 
     let success = false;
-    let archived = [];
     const task: Task[] = [];
 
     const archiver = new Archiver();
 
     for (let start = this.context.from; start <= this.context.to; start++) {
-      archived = await archiver.telegram({ channel: this.channel, msgid: start }).start();
+      const archived = await archiver.telegram({ channel: this.channel, msgid: start }).start();
       if (archived.length === 0) {
         task.push({ id: start, url: '', path: '', success: success });
       }
