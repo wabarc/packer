@@ -19,7 +19,11 @@ export const createFilename = (uri: string, title: string): string => {
   }
 
   const pathname = url.pathname.replace(/\//g, '-').replace(/^-+|-+$/gm, '');
-  const fullpath = `${hostname}-${pathname}`.replace(/^-+|-+$/gm, '').substring(0, 95);
+  let fullpath = `${hostname}-${pathname}-${title}`.replace(/^-+|-+$/gm, '').substring(0, 95);
+  if (url.search.length > 0) {
+    // Prevent overriding the results of different query
+    fullpath += Buffer.from(url.search).toString('base64').substr(-14, 12);
+  }
 
   return `${fullpath}.${extension}`;
 };
