@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.5] - 2020-10-26
+
+### Changed
+- Remove break line in webpage title.
+
 ## [0.0.4] - 2020-10-20
 
 ### Fixed
