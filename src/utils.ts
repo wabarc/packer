@@ -1,11 +1,19 @@
+const sanitize = (str: string) => {
+  if (typeof str !== 'string') {
+    return str;
+  }
+
+  str = str.replace(/"<>#%\{\}\|\\\^~\[\]`;\?:@=&/g, '').replace(/:\/\/|\//g, '-');
+
+  return Buffer.from(str).toString('utf8');
+};
+
 export const createFilename = (uri: string, title: string): string => {
   const extension = 'html';
   let filename = `unknown.${extension}`;
   let url: URL;
 
-  try {
-    url = new URL(decodeURI(uri));
-  } catch (_) {
+  if (!uri || typeof uri != 'string' || uri.length === 0) {
     return filename;
   }
 
@@ -13,15 +21,11 @@ export const createFilename = (uri: string, title: string): string => {
     title = title.replace(/\n|\r|\r\n/gm, '');
   }
 
-  const sanitize = (str: string) => {
-    if (typeof str !== 'string') {
-      return str;
-    }
-
-    str = str.replace(/"<>#%\{\}\|\\\^~\[\]`;\?:@=&/g, '');
-
-    return Buffer.from(str).toString('utf8');
-  };
+  try {
+    url = new URL(decodeURI(uri));
+  } catch (_) {
+    return sanitize(`${uri.replace(/\./g, '-')}-${title}.${extension}`);
+  }
 
   const hostname = url.hostname
     .replace(/\./g, '-')
