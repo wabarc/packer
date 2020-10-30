@@ -18,7 +18,7 @@ export const createFilename = (uri: string, title: string): string => {
   }
 
   if (typeof title === 'string') {
-    title = title.replace(/\n|\r|\r\n/gm, '');
+    title = title.replace(/\n|\r|\r\n/gm, '').trim();
   }
 
   try {
