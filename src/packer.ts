@@ -2,6 +2,7 @@ import { statSync, writeFile } from 'fs';
 import { Archiver } from '@wabarc/archiver';
 import { Config, Context, Task } from './types';
 import { createFilename } from './utils';
+import { minify } from 'html-minifier';
 
 export class Packer {
   private channel: string;
@@ -41,6 +42,11 @@ export class Packer {
 
       archived.forEach((arc: { url: string; title: string; content: string }) => {
         const filepath = `${this.context.dir}/${createFilename(arc.url, arc.title)}`;
+        arc.content = minify(arc.content, {
+          collapseWhitespace: true,
+          minifyCSS: true,
+          minifyJS: true,
+        });
         writeFile(filepath, arc.content, (err) => {
           if (err) {
             console.warn(`${arc.url} => ${err}`);

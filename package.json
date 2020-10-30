@@ -28,7 +28,8 @@
   },
   "homepage": "https://github.com/wabarc/packer#readme",
   "dependencies": {
-    "@wabarc/archiver": "^0.2.0"
+    "@wabarc/archiver": "^0.2.0",
+    "html-minifier": "^4.0.0"
   },
   "devDependencies": {
     "@types/jest": "^26.0.14",
