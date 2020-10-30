@@ -43,6 +43,7 @@ export class Packer {
       archived.forEach((arc: { url: string; title: string; content: string }) => {
         const filepath = `${this.context.dir}/${createFilename(arc.url, arc.title)}`;
         arc.content = minify(arc.content, {
+          continueOnParseError: true,
           collapseWhitespace: true,
           minifyCSS: true,
           minifyJS: true,
