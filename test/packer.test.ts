@@ -5,7 +5,7 @@ it('should process packer', async () => {
   expect(packer).toBeInstanceOf(Packer);
 
   const pack = await packer.on();
-  expect(pack.filter((pck) => pck.success === true).length).toEqual(1);
-  expect(pack.filter((pck) => pck.success === false).length).toEqual(2);
+  expect(pack.filter((pck) => pck.success === true).length).toEqual(2);
+  expect(pack.filter((pck) => pck.success === false).length).toEqual(1);
   expect(pack.filter((pck) => pck.url === '').length).toEqual(1);
 });
