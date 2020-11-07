@@ -67,4 +67,4 @@ These are the available options for archival webpage from Telegram channel. `cha
 
 ## License
 
-This software is released under the terms of the GNU General Public License v3.0. See the [LICENSE](https://github.com/wabarc/packer/blob/master/LICENSE) file for details.
+This software is released under the terms of the GNU General Public License v3.0. See the [LICENSE](https://github.com/wabarc/packer/blob/main/LICENSE) file for details.
