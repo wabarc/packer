@@ -1,5 +1,7 @@
 # packer
 
+🚨 **This package is deprecated! Please use [wabarc/archiver](https://github.com/wabarc/archiver), instead.**
+
 Read this in other languages: English | [简体中文](./README_zh-CN.md)
 
 Pack and store webpages from Telegram channel.
